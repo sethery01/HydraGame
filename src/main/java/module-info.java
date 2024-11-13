@@ -3,6 +3,6 @@ module com.example.hydragame {
     requires javafx.fxml;
 
 
-    opens com.example.hydragame to javafx.fxml;
-    exports com.example.hydragame;
+    opens CS3330.hydragame to javafx.fxml;
+    exports CS3330.hydragame;
 }

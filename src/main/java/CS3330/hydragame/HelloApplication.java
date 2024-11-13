@@ -1,4 +1,4 @@
-package com.example.hydragame;
+package CS3330.hydragame;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

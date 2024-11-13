@@ -1,4 +1,4 @@
-package com.example.hydragame;
+package CS3330.hydragame;
 
 public class HydraGameController {
 }
