@@ -12,7 +12,8 @@ public class HydraHead extends ImageView {
 
     // CLASS METHODS
     public HydraHead(Image image, int size) {
-
+        headSize = size;
+        setImage(image);
     }
 
     public int getHeadSize() {
@@ -30,6 +31,6 @@ public class HydraHead extends ImageView {
     public void putIn(int gridX, int gridY, GridPane board) {
         currentGirdX = gridX;
         currentGirdY = gridY;
-
+        board.add(this, gridX, gridY);
     }
 }

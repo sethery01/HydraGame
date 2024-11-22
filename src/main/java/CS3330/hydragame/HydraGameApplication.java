@@ -8,13 +8,10 @@ import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Slider;
 import javafx.scene.image.Image;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.Priority;
+import javafx.scene.layout.*;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
-import javafx.scene.layout.VBox;
 
 import java.beans.EventHandler;
 import java.util.Objects;
@@ -29,7 +26,6 @@ public class HydraGameApplication extends Application {
     // Creates the initial stage
     @Override
     public void start(Stage stage) {
-        HydraGameController controller = new HydraGameController();
 
         Label messageLabel = new Label("Head Size");
         Slider sizeSlider = new Slider(1, 6, 4);
@@ -44,8 +40,6 @@ public class HydraGameApplication extends Application {
         Button resetButton = new Button("Reset");
         playButton.setPrefWidth(150);
         resetButton.setPrefWidth(150);
-        playButton.setOnAction(event -> controller.play(event));
-        resetButton.setOnAction(event -> controller.reset(event));
 
         // Organize buttons and slider
         HBox viewBox = new HBox(10, resetButton, sizeSlider, playButton);
@@ -57,13 +51,28 @@ public class HydraGameApplication extends Application {
         HBox.setHgrow(playButton, Priority.ALWAYS);
         viewBox.setAlignment(Pos.CENTER);
 
-        // Create a GridPane
+        // Create a GridPane with fixed size and empty placeholders
         GridPane grid = new GridPane();
+        grid.setAlignment(Pos.CENTER);
+        grid.setHgap(5);
+        grid.setVgap(5);
+        for (int i = 0; i < 15; i++) {
+            ColumnConstraints col = new ColumnConstraints(40);
+            grid.getColumnConstraints().add(col);
+        }
+        for (int i = 0; i < 15; i++) {
+            RowConstraints row = new RowConstraints(40);
+            grid.getRowConstraints().add(row);
+        }
 
 
         // VBox layout for all components
         VBox vbox = new VBox(5, messageLabel, viewBox, grid);
         vbox.setAlignment(Pos.TOP_CENTER);
+
+        HydraGameController controller = new HydraGameController(playButton,resetButton,sizeSlider,grid);
+        playButton.setOnAction(event -> controller.play(event));
+        resetButton.setOnAction(event -> controller.reset(event));
 
         // Set stage
         stage.setTitle("Hydra Game");

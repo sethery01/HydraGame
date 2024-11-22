@@ -6,12 +6,12 @@ import java.util.Objects;
 
 public class HydraHeadsFactory {
     // CLASS
-    private static final Image headSize1 = new Image("file:src/main/resources/CS3330/hydragame/HeadSize1.png");
-    private static final Image headSize2 = new Image("file:src/main/resources/CS3330/hydragame/HeadSize2.png");
-    private static final Image headSize3 = new Image("file:src/main/resources/CS3330/hydragame/HeadSize3.png");
-    private static final Image headSize4 = new Image("file:src/main/resources/CS3330/hydragame/HeadSize4.png");
-    private static final Image headSize5 = new Image("file:src/main/resources/CS3330/hydragame/HeadSize5.png");
-    private static final Image headSize6 = new Image("file:src/main/resources/CS3330/hydragame/HeadSize6.png");
+    private static final Image headSize1 = new Image("file:src/main/resources/CS3330/hydragame/HeadSize1.png", 40, 40, true, true);
+    private static final Image headSize2 = new Image("file:src/main/resources/CS3330/hydragame/HeadSize2.png", 40, 40, true, true);
+    private static final Image headSize3 = new Image("file:src/main/resources/CS3330/hydragame/HeadSize3.png", 40, 40, true, true);
+    private static final Image headSize4 = new Image("file:src/main/resources/CS3330/hydragame/HeadSize4.png", 40, 40, true, true);
+    private static final Image headSize5 = new Image("file:src/main/resources/CS3330/hydragame/HeadSize5.png", 40, 40, true, true);
+    private static final Image headSize6 = new Image("file:src/main/resources/CS3330/hydragame/HeadSize6.png", 40, 40, true, true);
 
     // CLASS METHODS
     private HydraHeadsFactory() {}
