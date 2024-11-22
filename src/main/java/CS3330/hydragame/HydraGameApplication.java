@@ -1,8 +1,9 @@
+// Developed on a Windows machine.
+
 package CS3330.hydragame;
 
 import javafx.application.Application;
 import javafx.event.ActionEvent;
-import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
@@ -12,9 +13,6 @@ import javafx.scene.layout.*;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
-
-import java.beans.EventHandler;
-import java.util.Objects;
 
 public class HydraGameApplication extends Application {
 
@@ -27,6 +25,7 @@ public class HydraGameApplication extends Application {
     @Override
     public void start(Stage stage) {
 
+        // Setup label and sliders
         Label messageLabel = new Label("Head Size");
         Slider sizeSlider = new Slider(1, 6, 4);
         sizeSlider.setShowTickLabels(true);
@@ -65,12 +64,12 @@ public class HydraGameApplication extends Application {
             grid.getRowConstraints().add(row);
         }
 
-
         // VBox layout for all components
         VBox vbox = new VBox(5, messageLabel, viewBox, grid);
         vbox.setAlignment(Pos.TOP_CENTER);
 
-        HydraGameController controller = new HydraGameController(playButton,resetButton,sizeSlider,grid);
+        // Create an instance of the controller
+        HydraGameController controller = new HydraGameController(playButton,resetButton,sizeSlider,grid,vbox);
         playButton.setOnAction(event -> controller.play(event));
         resetButton.setOnAction(event -> controller.reset(event));
 
